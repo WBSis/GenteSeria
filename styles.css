@@ -8,50 +8,62 @@
 body {
   background-color: #0f1220;
   color: #ffffff;
-  line-height: 1.6;
+  /* line-height: 1.6; */
 }
 
 /* HERO */
 .hero {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
+
+  background-image: url("Genteseria_Page_Background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  background-color: #1b083f;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #5865F2, #1e213a);
-  text-align: center;
-  padding: 40px 20px;
 }
 
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
+
+
+/* Oscurecido para contraste */
+.hero::before {
+  /* content: ""; */
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15));
 }
 
-.subtitle {
-  margin: 20px 0 30px;
-  font-size: 1.2rem;
-  opacity: 0.9;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 6vh;
 }
 
-.subtitle span {
-  color: #ffd166;
-  font-weight: 600;
-}
-
+/* BOTÓN */
 .btn-primary {
+  margin-top: 10vh;
   display: inline-block;
-  padding: 14px 32px;
-  background-color: #ffd166;
+  padding: 16px 40px;
+  background-color: #f3bc3d;
   color: #000;
   text-decoration: none;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* ABOUT */
@@ -137,4 +149,16 @@ body {
   padding: 20px;
   font-size: 0.9rem;
   color: #aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    background-position: center top;
+  }
+
+  .hero-content {
+    margin-bottom: 4vh;
+  }
 }
